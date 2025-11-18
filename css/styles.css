@@ -1,0 +1,54 @@
+/* Custom styles for Massanutten Produce */
+/* Keep some spacing for the fixed navbar */
+body {
+  /* header contains topbar (approx 28px) + navbar (approx 56px) = ~84px */
+  padding-top: 84px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.navbar-brand {
+  font-weight: 600;
+}
+
+/* Footer stays at the bottom naturally; add a subtle border */
+footer {
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Utility: content area */
+#content {
+  min-height: 220px;
+}
+
+@media (max-width: 575.98px) {
+  body { padding-top: 84px; }
+}
+
+/* Topbar styles */
+.topbar {
+  padding: 0.28rem 0;
+}
+.topbar a { color: #fff; opacity: 0.95; }
+
+/* Ensure the header (topbar + navbar) share the same background seamlessly */
+header .navbar {
+  margin: 0; /* remove gaps */
+}
+
+/* Styling for the small collapse toggle in the topbar */
+.topbar .btn-link {
+  color: #fff;
+  text-decoration: none;
+}
+.topbar .bi {
+  font-size: 1.05rem;
+}
+
+/* Make collapsed hours appear with a small margin on mobile */
+.topbar .collapse {
+  display: inline-block;
+}
+.topbar .collapse.show {
+  margin-top: .25rem;
+}
+
