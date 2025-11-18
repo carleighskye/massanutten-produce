@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About — Massanutten Produce</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <header class="fixed-top">
+      <div class="topbar bg-success text-light small">
+        <div class="container d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+            <div class="d-lg-block ms-1">
+              <span id="todayHours">Today: —</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">Massanutten Produce</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="py-5">
+      <div class="container mt-5">
+        <div class="bg-light p-5 rounded shadow-sm">
+          <h1 class="display-5">About Massanutten Produce</h1>
+          <p class="lead">We are a small family-run produce farm in the Massanutten valley. We grow seasonal vegetables and fruits and sell locally at farmers markets and to the community.</p>
+          <p>Our mission is to provide fresh, sustainably grown produce while supporting the local economy and promoting healthy eating. Visit us during our hours or contact us for wholesale inquiries.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-dark text-light py-5 mt-auto site-footer">
+      <div class="container">
+        <div class="row gy-3 align-items-center">
+          <div class="col-md-4">
+            <strong>Contact</strong>
+            <div class="footer-phone mt-2"><a class="text-light" href="tel:+15408101938">Phone: (540) 810-1938</a></div>
+            <div class="footer-address mt-1">5375 Spotswood Trail, Penn Laird, VA 22846</div>
+          </div>
+          <div class="col-md-4">
+            <strong>Hours</strong>
+            <div class="footer-hours mt-2">Monday: 9:00am–5:00pm<br>Tuesday: 9:00am–5:00pm<br>Wednesday: 9:00am–5:00pm<br>Thursday: 9:00am–5:00pm<br>Friday: 9:00am–5:00pm<br>Saturday: 10:00am–4:00pm<br>Sunday: Closed</div>
+          </div>
+          <div class="col-md-4 text-md-end">
+            <div class="mb-2">&copy; 2025 Massanutten Produce</div>
+            <div class="footer-social">
+              <a class="text-light ms-2" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+                <i class="bi bi-instagram"></i>
+              </a>
+              <a class="text-light ms-2" href="#" target="_blank" rel="noopener" aria-label="Facebook">
+                <i class="bi bi-facebook"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      (function(){
+        const weekly = {0:'Closed',1:'9:00am–5:00pm',2:'9:00am–5:00pm',3:'9:00am–5:00pm',4:'9:00am–5:00pm',5:'9:00am–5:00pm',6:'10:00am–4:00pm'};
+        const days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        const d=new Date().getDay();
+        const todayEl=document.getElementById('todayHours');
+        if(todayEl) todayEl.textContent = `Today: ${days[d]} — ${weekly[d]}`;
+      })();
+    </script>
+  </body>
+</html>

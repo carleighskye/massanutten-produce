@@ -17,19 +17,9 @@
 			<div class="topbar bg-success text-light small">
 				<div class="container d-flex justify-content-between align-items-center">
 					<div class="d-flex align-items-center">
-						<!-- Collapse toggle visible only on small screens -->
-						<button class="btn btn-sm btn-link text-light d-lg-none me-2 p-0" type="button" data-bs-toggle="collapse" data-bs-target="#topbarContent" aria-expanded="false" aria-controls="topbarContent" aria-label="Toggle hours">
-							<i class="bi bi-list" aria-hidden="true"></i>
-						</button>
-						<div class="collapse d-lg-block" id="topbarContent">
-							Mon–Fri: 8:00am–6:00pm &nbsp;|&nbsp; Sat: 9:00am–4:00pm &nbsp;|&nbsp; Sun: Closed
+						<div class="d-lg-block ms-1">
+							<span id="todayHours">Today: —</span>
 						</div>
-					</div>
-					<div>
-						<a class="text-decoration-none text-light d-flex align-items-center" href="tel:+15401234567">
-							<i class="bi bi-telephone-fill me-1" aria-hidden="true"></i>
-							<span class="d-none d-sm-inline">(540) 123-4567</span>
-						</a>
 					</div>
 				</div>
 			</div>
@@ -42,37 +32,167 @@
 					</button>
 					<div class="collapse navbar-collapse" id="mainNav">
 						<ul class="navbar-nav ms-auto">
-							<li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">About</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+							<li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
 						</ul>
 					</div>
 				</div>
 			</nav>
 		</header>
 
+		<!-- Hero carousel (rotating background images) -->
+		<div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4500" data-bs-pause="false">
+			<div class="carousel-inner">
+				<div class="carousel-item active" style="background-image: url('img/ousideback.jpg')">
+					<div class="carousel-overlay"></div>
+				</div>
+
+				<div class="carousel-item" style="background-image: url('img/watermelon.jpg')">
+					<div class="carousel-overlay"></div>
+				</div>
+
+				<div class="carousel-item" style="background-image: url('img/bakeryitems.jpg')">
+					<div class="carousel-overlay"></div>
+				</div>
+
+				<div class="carousel-item" style="background-image: url('img/mums.jpg')">
+					<div class="carousel-overlay"></div>
+				</div>
+			</div>
+			<!-- Controls and indicators removed for a seamless rotating hero -->
+			<!-- Static welcome box overlayed on top of carousel (stays while slides rotate) -->
+			<div class="hero-static-overlay">
+				<div class="container">
+					<div class="welcome-box">
+						<h1>Welcome to Massanutten Produce</h1>
+						<p class="lead">Fresh produce from Massanutten valley — seasonal, local, and sustainably grown.</p>
+						<p><a class="btn btn-light btn-lg" href="about.html">Learn More</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!-- Main content -->
 		<main class="py-5">
 			<div class="container mt-5">
-				<div class="bg-light p-5 rounded shadow-sm">
-					<h1 class="display-5">Welcome to Massanutten Produce</h1>
-					<p class="lead">Fresh produce from Massanutten valley. Use this area to add your content.</p>
-				</div>
+				<!-- Page content goes here -->
 
-				<div id="content" class="mt-4">
-					<!-- Page content goes here -->
-				</div>
+				<!-- Seasonal offerings section -->
+				<section id="seasonal" class="mt-5">
+					<h2 class="mb-4">In Season Now</h2>
+					<div class="row g-4">
+						<div class="col-sm-6 col-md-4">
+							<div class="card h-100">
+								<img src="https://images.unsplash.com/photo-1562440499-64f179b5b7f8?auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="Tomatoes">
+								<div class="card-body">
+									<h5 class="card-title">Tomatoes</h5>
+									<p class="card-text">Vine-ripened tomatoes — great for salads and sauces. (Jul–Sep)</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-6 col-md-4">
+							<div class="card h-100">
+								<img src="https://images.unsplash.com/photo-1506807803488-8eafc1535c44?auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="Sweet Corn">
+								<div class="card-body">
+									<h5 class="card-title">Sweet Corn</h5>
+									<p class="card-text">Sweet and tender corn on the cob. (Jul–Aug)</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-6 col-md-4">
+							<div class="card h-100">
+								<img src="https://images.unsplash.com/photo-1478144592103-25e218a04891?auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="Apples">
+								<div class="card-body">
+									<h5 class="card-title">Apples</h5>
+									<p class="card-text">Crisp apples from late summer into fall. (Aug–Oct)</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-6 col-md-4">
+							<div class="card h-100">
+								<img src="https://images.unsplash.com/photo-1542444459-db1f3f0ab1a9?auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="Peppers">
+								<div class="card-body">
+									<h5 class="card-title">Peppers</h5>
+									<p class="card-text">Sweet and hot peppers in a variety of colors. (Jul–Sep)</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-6 col-md-4">
+							<div class="card h-100">
+								<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="Zucchini">
+								<div class="card-body">
+									<h5 class="card-title">Zucchini</h5>
+									<p class="card-text">Fresh summer squash, perfect for grilling. (Jun–Sep)</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-6 col-md-4">
+							<div class="card h-100">
+								<img src="https://images.unsplash.com/photo-1436134479607-1305c01f3d7b?auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="Strawberries">
+								<div class="card-body">
+									<h5 class="card-title">Strawberries</h5>
+									<p class="card-text">Sweet, juicy strawberries when in season. (May–Jun)</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
 			</div>
 		</main>
 
 		<!-- Footer -->
-		<footer class="bg-dark text-light py-4 mt-auto">
-			<div class="container text-center">
-				<p class="mb-0">&copy; 2025 Massanutten Produce — All rights reserved.</p>
+		<footer class="bg-dark text-light py-5 mt-auto site-footer">
+			<div class="container">
+				<div class="row gy-3 align-items-center">
+					<div class="col-md-4">
+						<strong>Contact</strong>
+						<div class="footer-phone mt-2"><a class="text-light" href="tel:+15408101938">Phone: (540) 810-1938</a></div>
+						<div class="footer-address mt-1">5375 Spotswood Trail, Penn Laird, VA 22846</div>
+					</div>
+					<div class="col-md-4">
+						<strong>Hours</strong>
+						<div class="footer-hours mt-2">Monday: 9:00am–5:00pm<br>Tuesday: 9:00am–5:00pm<br>Wednesday: 9:00am–5:00pm<br>Thursday: 9:00am–5:00pm<br>Friday: 9:00am–5:00pm<br>Saturday: 10:00am–4:00pm<br>Sunday: Closed</div>
+					</div>
+					<div class="col-md-4 text-md-end">
+						<div class="mb-2">&copy; 2025 Massanutten Produce</div>
+						<div class="footer-social">
+							<a class="text-light ms-2" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+								<i class="bi bi-instagram"></i>
+							</a>
+							<a class="text-light ms-2" href="#" target="_blank" rel="noopener" aria-label="Facebook">
+								<i class="bi bi-facebook"></i>
+							</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</footer>
 
 		<!-- Bootstrap JS bundle -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+		<script>
+		// Update today's hours display (only today's hours shown in topbar)
+			(function(){
+				const weekly = {
+					0: 'Closed',
+					1: '9:00am–5:00pm',
+					2: '9:00am–5:00pm',
+					3: '9:00am–5:00pm',
+					4: '9:00am–5:00pm',
+					5: '9:00am–5:00pm',
+					6: '10:00am–4:00pm'
+				};
+				const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+				const d = new Date().getDay();
+				const todayEl = document.getElementById('todayHours');
+				if(todayEl) todayEl.textContent = `Today: ${days[d]} — ${weekly[d]}`;
+			})();
+		</script>
 	</body>
 </html>
