@@ -12,6 +12,13 @@
 		<link rel="stylesheet" href="css/styles.css">
 	</head>
 	<body>
+	<style>
+		/* Flyer modal canvas / layout styles */
+		.flyer-row{display:flex;gap:1rem;justify-content:center;align-items:flex-start;flex-wrap:wrap;padding:1rem 0}
+		.flyer-col{flex:1 1 400px;max-width:48%}
+		.flyer-canvas{width:100%;background:#fff;border:1px solid rgba(0,0,0,.08)}
+		@media (max-width:767px){.flyer-col{max-width:100%}}
+	</style>
 		<!-- Header: topbar + navbar combined so topbar appears integrated -->
 		<header class="fixed-top">
 			<div class="topbar bg-success text-light small">
@@ -32,13 +39,15 @@
 					</button>
 					<div class="collapse navbar-collapse" id="mainNav">
 						<ul class="navbar-nav ms-auto">
-							<li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-							<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+							<li class="nav-item"><a class="nav-link active" href="index.html" target="_blank" rel="noopener noreferrer">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="about.html" target="_blank" rel="noopener noreferrer">About</a></li>
+							<li class="nav-item"><a class="nav-link" href="contact.html" target="_blank" rel="noopener noreferrer">Contact</a></li>
 						</ul>
 					</div>
 				</div>
 			</nav>
+			<!-- Centered logo overlapping the hero -->
+			<img src="img/Massanutten%20produce%20logo.png" alt="Massanutten Produce" class="nav-logo">
 		</header>
 
 		<!-- Hero carousel (rotating background images) -->
@@ -67,7 +76,7 @@
 					<div class="welcome-box">
 						<h1>Welcome to Massanutten Produce</h1>
 						<p class="lead">Fresh produce from Massanutten valley — seasonal, local, and sustainably grown.</p>
-						<p><a class="btn btn-light btn-lg" href="about.html">Learn More</a></p>
+						<p><a class="btn btn-light btn-lg" href="about.html" target="_blank" rel="noopener noreferrer">Learn More</a></p>
 					</div>
 				</div>
 			</div>
@@ -77,67 +86,67 @@
 		<main class="py-5">
 			<div class="container mt-5">
 				<!-- Page content goes here -->
+				<!-- Monthly flyer button -->
+				<div class="text-center mb-4">
+					<a id="openFlyerBtn" class="btn btn-success btn-lg" href="#" aria-label="Open monthly flyer preview">Check out our monthly flyer!</a>
+				</div>
 
 				<!-- Seasonal offerings section -->
 				<section id="seasonal" class="mt-5">
 					<h2 class="mb-4">In Season Now</h2>
 					<div class="row g-4">
-						<div class="col-sm-6 col-md-4">
+						<div class="col-12 col-md-6 col-lg-4">
 							<div class="card h-100">
-								<img src="https://images.unsplash.com/photo-1562440499-64f179b5b7f8?auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="Tomatoes">
+								<div class="card-body">
+									<h5 class="card-title">Potatoes</h5>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-md-6 col-lg-4">
+							<div class="card h-100">
+								<div class="card-body">
+									<h5 class="card-title">Sweet potatoes</h5>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-md-6 col-lg-4">
+							<div class="card h-100">
 								<div class="card-body">
 									<h5 class="card-title">Tomatoes</h5>
-									<p class="card-text">Vine-ripened tomatoes — great for salads and sauces. (Jul–Sep)</p>
 								</div>
 							</div>
 						</div>
 
-						<div class="col-sm-6 col-md-4">
+						<div class="col-12 col-md-6 col-lg-4">
 							<div class="card h-100">
-								<img src="https://images.unsplash.com/photo-1506807803488-8eafc1535c44?auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="Sweet Corn">
 								<div class="card-body">
-									<h5 class="card-title">Sweet Corn</h5>
-									<p class="card-text">Sweet and tender corn on the cob. (Jul–Aug)</p>
+									<h5 class="card-title">Squash</h5>
 								</div>
 							</div>
 						</div>
 
-						<div class="col-sm-6 col-md-4">
+						<div class="col-12 col-md-6 col-lg-4">
 							<div class="card h-100">
-								<img src="https://images.unsplash.com/photo-1478144592103-25e218a04891?auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="Apples">
+								<div class="card-body">
+									<h5 class="card-title">Greens</h5>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-md-6 col-lg-4">
+							<div class="card h-100">
 								<div class="card-body">
 									<h5 class="card-title">Apples</h5>
-									<p class="card-text">Crisp apples from late summer into fall. (Aug–Oct)</p>
 								</div>
 							</div>
 						</div>
 
-						<div class="col-sm-6 col-md-4">
+						<div class="col-12 col-md-6 col-lg-4">
 							<div class="card h-100">
-								<img src="https://images.unsplash.com/photo-1542444459-db1f3f0ab1a9?auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="Peppers">
 								<div class="card-body">
-									<h5 class="card-title">Peppers</h5>
-									<p class="card-text">Sweet and hot peppers in a variety of colors. (Jul–Sep)</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-sm-6 col-md-4">
-							<div class="card h-100">
-								<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="Zucchini">
-								<div class="card-body">
-									<h5 class="card-title">Zucchini</h5>
-									<p class="card-text">Fresh summer squash, perfect for grilling. (Jun–Sep)</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-sm-6 col-md-4">
-							<div class="card h-100">
-								<img src="https://images.unsplash.com/photo-1436134479607-1305c01f3d7b?auto=format&fit=crop&w=800&q=60" class="card-img-top" alt="Strawberries">
-								<div class="card-body">
-									<h5 class="card-title">Strawberries</h5>
-									<p class="card-text">Sweet, juicy strawberries when in season. (May–Jun)</p>
+									<h5 class="card-title">Grapes</h5>
 								</div>
 							</div>
 						</div>
@@ -146,13 +155,31 @@
 			</div>
 		</main>
 
+		<!-- Flyer Preview Modal (images) -->
+		<div class="modal fade" id="flyerModal" tabindex="-1" aria-hidden="true">
+			<div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-sm-down">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Monthly Flyer Preview</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<div id="modalFlyerRow" class="flyer-row">
+							<div class="flyer-col"><img id="modalImg1" class="img-fluid" alt="Flyer page 1"></div>
+							<div class="flyer-col"><img id="modalImg2" class="img-fluid" alt="Flyer page 2"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!-- Footer -->
 		<footer class="bg-dark text-light py-5 mt-auto site-footer">
 			<div class="container">
 				<div class="row gy-3 align-items-center">
 					<div class="col-md-4">
 						<strong>Contact</strong>
-						<div class="footer-phone mt-2"><a class="text-light" href="tel:+15408101938">Phone: (540) 810-1938</a></div>
+						<div class="footer-phone mt-2"><a class="text-light" href="tel:+15408101938" target="_blank" rel="noopener noreferrer">Phone: (540) 810-1938</a></div>
 						<div class="footer-address mt-1">5375 Spotswood Trail, Penn Laird, VA 22846</div>
 					</div>
 					<div class="col-md-4">
@@ -161,11 +188,11 @@
 					</div>
 					<div class="col-md-4 text-md-end">
 						<div class="mb-2">&copy; 2025 Massanutten Produce</div>
-						<div class="footer-social">
-							<a class="text-light ms-2" href="#" target="_blank" rel="noopener" aria-label="Instagram">
-								<i class="bi bi-instagram"></i>
-							</a>
-							<a class="text-light ms-2" href="#" target="_blank" rel="noopener" aria-label="Facebook">
+							<div class="footer-social">
+								<a class="text-light ms-2" href="https://www.instagram.com/massanutten_produce/?hl=en" target="_blank" rel="noopener" aria-label="Instagram">
+									<i class="bi bi-instagram"></i>
+								</a>
+							<a class="text-light ms-2" href="https://www.facebook.com/massanuttenproduce" target="_blank" rel="noopener" aria-label="Facebook">
 								<i class="bi bi-facebook"></i>
 							</a>
 						</div>
@@ -176,6 +203,37 @@
 
 		<!-- Bootstrap JS bundle -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+		<script>
+		(function(){
+			const openBtn = document.getElementById('openFlyerBtn');
+			const modalEl = document.getElementById('flyerModal');
+			const modal = new bootstrap.Modal(modalEl);
+			const img1 = document.getElementById('modalImg1');
+			const img2 = document.getElementById('modalImg2');
+
+			function loadImages(){
+				if(img1 && !img1.src) img1.src = 'img/flyer-page1.png';
+				if(img2 && !img2.src) img2.src = 'img/flyer-page2.png';
+			}
+
+			if(openBtn){
+				openBtn.addEventListener('click', function(e){
+					e.preventDefault();
+					modal.show();
+				});
+			}
+
+			modalEl.addEventListener('shown.bs.modal', function(){
+				loadImages();
+			});
+
+			modalEl.addEventListener('hidden.bs.modal', function(){
+				// optional: clear images to free memory
+				// if(document.getElementById('modalImg1')) document.getElementById('modalImg1').src = '';
+				// if(document.getElementById('modalImg2')) document.getElementById('modalImg2').src = '';
+			});
+		})();
+		</script>
 		<script>
 		// Update today's hours display (only today's hours shown in topbar)
 			(function(){

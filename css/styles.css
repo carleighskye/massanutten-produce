@@ -3,7 +3,31 @@
 body {
   /* header contains topbar (approx 28px) + navbar (approx 56px) = ~84px */
   padding-top: 84px;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-family: Helvetica, Arial, sans-serif; /* use Helvetica for body */
+}
+
+:root {
+  /* Set this to the logo outline color. Change to match your logo exact hex. */
+  --logo-outline-color: #2e6417; /* updated to requested navbar/button color */
+  /* Dark-brown accent used instead of pure black */
+  --accent-dark: #4b2e1e;
+  --footer-bg: var(--accent-dark);
+}
+
+/* Load 'March' font if provided in `fonts/` folder. If you have a CDN or Google-hosted
+   version, remove the @font-face and add the provider link instead. */
+@font-face {
+  font-family: 'March';
+  src: url('../fonts/March.woff2') format('woff2'),
+       url('../fonts/March.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Apply March to headings and the brand. Falls back to serif if the font file is missing. */
+h1, h2, h3, h4, h5, h6, .navbar-brand, .hero-static-overlay .welcome-box h1 {
+  font-family: 'March', Georgia, 'Times New Roman', serif;
 }
 
 .navbar-brand {
@@ -35,6 +59,40 @@ header .navbar {
   margin: 0; /* remove gaps */
 }
 
+/* Use the logo outline color for the topbar and navbar background. */
+.topbar,
+header .navbar {
+  background-color: var(--logo-outline-color) !important;
+}
+
+/* Topbar text remains brown and bold */
+.topbar,
+.topbar a {
+  color: var(--accent-dark) !important;
+  font-weight: 700 !important;
+}
+/* Keep the daily hours highly visible and white */
+.topbar #todayHours {
+  color: #fff !important;
+  font-weight: 700 !important;
+}
+
+/* Navbar brand and links: keep text white and bold */
+header .navbar .navbar-brand,
+header .navbar .nav-link {
+  color: #fff !important;
+  font-weight: 700 !important;
+}
+
+/* Footer: use brown background and light text for contrast */
+footer, .site-footer, footer.bg-dark {
+  background-color: var(--footer-bg) !important;
+  color: #fff !important;
+}
+footer a, .site-footer a, .footer-phone a, .footer-social a {
+  color: #fff !important;
+}
+
 /* Styling for the small collapse toggle in the topbar */
 .topbar .btn-link {
   color: #fff;
@@ -63,7 +121,7 @@ header .navbar {
 #heroCarousel .carousel-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background: rgba(75,46,30,0.35); /* dark-brown overlay */
 }
 
 #heroCarousel .carousel-caption {
@@ -87,15 +145,15 @@ header .navbar {
 }
 .hero-static-overlay .welcome-box {
   pointer-events: auto; /* enable clicks on buttons/links */
-  background: rgba(0,0,0,0.55);
+  background: rgba(75,46,30,0.55); /* dark-brown semi-opaque background */
   color: #fff;
   padding: 1.75rem;
   border-radius: 0.5rem;
   max-width: 760px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  box-shadow: 0 8px 20px rgba(75,46,30,0.35);
 }
 .hero-static-overlay .welcome-box .btn-light {
-  color: #000;
+  color: var(--accent-dark);
 }
 
 @media (max-width: 767.98px) {
@@ -112,6 +170,14 @@ header .navbar {
 .contact-side a { text-decoration: none; }
 .contact-side a:hover { text-decoration: underline; }
 
+/* Social links in contact panel: keep icon + label on one line */
+.contact-side .social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
 @media (max-width: 767.98px) {
   .contact-side { padding: 1rem !important; }
 }
@@ -121,6 +187,23 @@ header .navbar {
   height: 180px;
   object-fit: cover;
 }
+
+#seasonal .card {
+  /* use #4ca626 with a strong tint (90% opacity) */
+  /* #4ca626 -> rgb(76,166,38) */
+  background: rgba(76,166,38,0.90);
+  border: 0;
+}
+#seasonal .card .card-body {
+  background: transparent;
+  padding: 1rem 1rem; /* keep spacing for the header */
+}
+#seasonal .card .card-title {
+  color: #fff;
+  font-weight: 700;
+  margin: 0;
+}
+#seasonal .card .card-body ul { display: none; }
 
 /* Footer social icons */
 .footer-social {
@@ -181,5 +264,42 @@ header .navbar {
   width: 100%;
   height: 100%;
   display: block;
+}
+
+/* Centered nav logo that slightly overlaps the hero */
+.nav-logo {
+  position: absolute;
+  left: 50%;
+  top: 100%; /* position at bottom edge of header */
+  transform: translate(-50%, -48%); /* lift higher so it overlaps more */
+  width: 160px; /* slightly bigger */
+  height: auto;
+  z-index: 5; /* above hero overlays */
+  border-radius: 0; /* keep clean edges for cutout */
+  box-shadow: none; /* flat look */
+  background: transparent; /* remove white background */
+  padding: 0; /* remove padding so image appears as cutout */
+}
+
+@media (max-width: 767.98px) {
+  .nav-logo {
+    width: 120px;
+    transform: translate(-50%, -30%);
+  }
+}
+
+/* Make Bootstrap success / primary buttons match the navbar color */
+.btn-success,
+.btn-primary {
+  background-color: var(--logo-outline-color) !important;
+  border-color: var(--logo-outline-color) !important;
+  color: #fff !important;
+}
+.btn-success:hover,
+.btn-primary:hover,
+.btn-success:focus,
+.btn-primary:focus {
+  background-color: #244e12 !important; /* slightly darker hover */
+  border-color: #244e12 !important;
 }
 
